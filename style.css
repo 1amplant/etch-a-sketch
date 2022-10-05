@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+.grid {
+ width: 20px;
+ height:20px;
+ border: 1px solid black;
+}
+
+#container {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ margin: 200px auto auto; 
+ 
+ }
+
+.button{
+ padding: 10px 20px;
+ background-color: lightgray;
+ border-radius: 20%;
+ margin:20px;
+ border-color: black;
+ border-width: thin;
+}
+
+#buttons{
+ display: flex;
+ justify-content: center;
+
+}

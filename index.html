@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "container"></div>
+    <div id="buttons">
+        <button class="button" id ="start">Start</button>
+        <button class="button" id ="reset" type="button"  onClick="window.location.reload()"> Reset</button>
+    </div>
+
+    <script>
+        document.querySelector("#start").addEventListener("click", generateGrid)
+ 
+        function generateGrid() {
+            let row = prompt("How many rows?");
+            let column = prompt("How many columns?");
+
+
+            container = document.querySelector('#container');
+            button = document.querySelector('#start');
+            var w = column * 22;
+            var h = row * 22;
+            button.disabled = true;
+
+            document.getElementById("container").style.width = w + "px";
+            document.getElementById("container").style.height = h + "px";
+
+            let x = row * column;
+            for (let i = 0; i < x; i++) {
+                const grid = document.createElement("div");
+                grid.classList.add('grid'); 
+                container.appendChild(grid);
+            }
+            const grid = document.querySelectorAll('.grid');
+
+            grid.forEach (function(color) {
+                color.addEventListener("mouseover", function() {
+                    color.style.backgroundColor = "black";
+                });
+            }); 
+
+        }
+
+
+        
+   
+    </script>
+
+</body>
+</html>
